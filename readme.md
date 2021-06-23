@@ -25,33 +25,33 @@
 - [重命名文件](#重命名文件)
 - [移动一个目录](#移动一个目录)
 - [重命名目录](#重命名目录)
-- [merge directories](#merge-directories)
-- [create a new file](#create-a-new-file)
-- [create a new directory](#create-a-new-directory)
-- [show file/directory size](#show-filedirectory-size)
-- [show file/directory info](#show-filedirectory-info)
-- [open a file with the default program](#open-a-file-with-the-default-program)
-- [zip a directory](#zip-a-directory)
-- [unzip a directory](#unzip-a-directory)
-- [peek files in a zip file](#peek-files-in-a-zip-file)
-- [remove a file](#remove-a-file)
-- [remove a directory](#remove-a-directory)
-- [list directory contents](#list-directory-contents)
-- [tree view a directory and its subdirectories](#tree-view-a-directory-and-its-subdirectories)
-- [find a stale file](#find-a-stale-file)
-- [show a calendar](#show-a-calendar)
-- [find a future date](#find-a-future-date)
-- [use a calculator](#use-a-calculator)
-- [force quit a program](#force-quit-a-program)
-- [check server response](#check-server-response)
-- [view content of a file](#view-content-of-a-file)
-- [search for a text](#search-for-a-text)
-- [view an image](#view-an-image)
-- [show disk size](#show-disk-size)
-- [check performance of your computer](#check-performance-of-your-computer)
-- [Quick tips](#quick-tips)
-- [Hotkeys](#hotkeys)
-- [I can't remember these cryptic commands](#i-cant-remember-these-cryptic-commands)
+- [合并目录文件](#合并目录文件)
+- [创建新文件](#创建新文件)
+- [创建新目录](#创建新目录)
+- [显示文件或目录大小](#显示文件或目录大小)
+- [显示文件或目录其他信息](#显示文件或目录其他信息)
+- [用默认程序打开文件](#用默认程序打开文件)
+- [压缩整个目录](#压缩整个目录)
+- [解压目录的压缩包](#解压目录的压缩包)
+- [速览压缩包中文件](#速览压缩包中文件)
+- [删除一个文件](#删除一个文件)
+- [删除一个目录](#删除一个目录)
+- [显示目录中文件](#显示目录中文件)
+- [显示目录下所有文件和子目录的文件树](#显示目录下所有文件和子目录的文件树)
+- [找出陈旧文件](#找出陈旧文件)
+- [显示日历](#显示日历)
+- [计算未来日期](#计算未来日期)
+- [使用计算器](#使用计算器)
+- [强制退出应用程序](#强制退出应用程序)
+- [查看服务器响应](#查看服务器响应)
+- [查看文件内容](#查看文件内容)
+- [检索文本内容](#检索文本内容)
+- [查看一张图片](#查看一张图片)
+- [查看磁盘大小](#查看磁盘大小)
+- [查看计算机性能](#查看计算机性能)
+- [技巧小贴士](#技巧小贴士)
+- [热键](#热键)
+- [我记不住这些神秘指令怎么办呢？](#我记不住这些神秘指令怎么办呢)
 
 ## 拷贝一个文件
 
@@ -136,206 +136,206 @@ $ mv myMedia/ myMusic/myMedia
 $ mv myMedia/ myMusic/
 ```
 
-## merge directories
+## 合并目录文件
 
-**STOP DRAG AND DROPPING TO MERGE DIRECTORIES** :-1:
-
-```shell
-$ rsync -a /images/ /images2/	# note: may over-write files with the same name, so be careful!
-```
-
-## create a new file
-
-**STOP RIGHT CLICKING AND CREATE A NEW FILE** :-1:
+**别再用拖拽来合并目录了！** :-1:
 
 ```shell
-$ touch 'new file'    # updates the file's access and modification timestamp if it already exists
-# or
-$ > 'new file'        # note: erases the content if it already exists
+$ rsync -a /images/ /images2/   # 注: 当心！！同名的文件会被覆盖掉!
 ```
 
-## create a new directory
+## 创建新文件
 
-**STOP RIGHT CLICKING AND CREATE A NEW DIRECTORY** :-1:
+**别再用`右键`来新建文件了！** :-1:
+
+```shell
+$ touch 'new file'    # 如果文件已经存在，会更新它的权限和修改日期
+# 或者也可以用
+$ > 'new file'        # 注: 如果文件已经存在，会清空里面内容
+```
+
+## 创建新目录
+
+**也别用`右键`来新建目录了！** :-1:
 
 ```shell
 $ mkdir 'untitled folder'
-# or
+# 或者可以用下面这样的写法新建一连串文件夹
 $ mkdir -p 'path/may/not/exist/untitled\ folder'
 ```
 
-## show file/directory size
+## 显示文件或目录大小
 
-**STOP RIGHT CLICKING AND SHOW FILE/directory INFO** :-1:
+**别再用`右键`点开来看属性了！** :-1:
 
 ```shell
 $ du -sh node_modules/
 ```
 
-## show file/directory info
+## 显示文件或目录其他信息
 
-**STOP RIGHT CLICKING AND SHOW FILE/DIRECTORY INFO** :-1:
-
-```shell
-$ stat -x readme.md   # on macOS
-$ stat readme.md      # on Linux
-```
-
-## open a file with the default program
-
-**STOP DOUBLE CLICKING ON A FILE** :-1:
+**真的别用`右键`了！** :-1:
 
 ```shell
-$ xdg-open file   # on Linux
-$ open file       # on MacOS
+$ stat -x readme.md   # macOS 系统
+$ stat readme.md      # Linux 系统
 ```
 
-## zip a directory
+## 用默认程序打开文件
 
-**STOP RIGHT CLICKING AND COMPRESS DIRECTORY** :-1:
+**没有双击，没有双击，没有双击** :-1:
+
+```shell
+$ xdg-open file   # Linux 系统
+$ open file       # MacOS 系统
+```
+
+## 压缩整个目录
+
+**别再用`右键`-`压缩`了！** :-1:
 
 ```shell
 $ zip -r archive_name.zip folder_to_compress
 ```
 
-## unzip a directory
+## 解压目录的压缩包
 
-**STOP RIGHT CLICKING AND UNCOMPRESS DIRECTORY** :-1:
+**也别用`右键`-`解压`了！** :-1:
 
 ```shell
 $ unzip archive_name.zip
 ```
 
-## peek files in a zip file
+## 速览压缩包中文件
 
-**STOP USING WinRAR** :-1:
+**我们不要`WinRAR`** :-1:
 
 ```shell
 $ zipinfo archive_name.zip
-# or
+# 或者也可以用
 $ unzip -l archive_name.zip
 ```
 
-## remove a file
+## 删除一个文件
 
-**STOP RIGHT CLICKING AND DELETE A FILE PERMANENTLY** :-1:
+**别再`右键`然后永久删除文件了！** :-1:
 
 ```shell
 $ rm my_useless_file
 ```
 
-IMPORTANT: The rm command deletes my_useless_file permanently, which is equivalent to move my_useless_file to Recycle Bin and hit Empty Recycle Bin.
+非常重要：`rm` 指令会把 `my_useless_file` 永久删除，和把它移到回收站后再点 `清空回收站` 一样的效果！
 
-## remove a directory
+## 删除一个目录
 
-**STOP RIGHT CLICKING AND DELETE A DIRECTORY PERMANENTLY** :-1:
+**也别再`右键`然后永久删除目录了！** :-1:
 
 ```shell
 $ rm -r my_useless_folder
 ```
 
-## list directory contents
+## 显示目录中文件
 
-**STOP OPENING YOUR FINDER OR FILE EXPLORER** :-1:
+**别打开你的`访达`或者`文件浏览器`** :-1:
 
 ```shell
-$ ls my_folder        # Simple
-$ ls -la my_folder    # -l: show in list format. -a: show all files, including hidden. -la combines those options.
-$ ls -alrth my_folder # -r: reverse output. -t: sort by time (modified). -h: output human-readable sizes.
+$ ls my_folder        # 简简单单
+$ ls -la my_folder    # -l: 以列表格式显示. -a: 显示包括隐藏文件的所有文件. -la 结合以上两个选项.
+$ ls -alrth my_folder # -r: 倒序显示. -t: 按修改时间排序. -h: 以易读的格式显示大小.
 ```
 
-## tree view a directory and its subdirectories
+## 显示目录下所有文件和子目录的文件树
 
-**STOP OPENING YOUR FINDER OR FILE EXPLORER** :-1:
+**别打开你的`访达`或者`文件浏览器`** :-1:
 
 ```shell
-$ tree                                                        # on Linux
-$ find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'      # on MacOS
-# Note: install homebrew (https://brew.sh) to be able to use (some) Linux utilities such as tree.
+$ tree                                                        # Linux 系统
+$ find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'      # MacOS 系统
+# 注: 安装 homebrew (https://brew.sh) 后能让你在 MacOS 上也能用（部分） Linux 的功能（比如 tree）. 安装方法见下
 # brew install tree
 ```
 
-## find a stale file
+## 找出陈旧文件
 
-**STOP USING YOUR FILE EXPLORER TO FIND A FILE** :-1:
+**别用你的文件浏览器！** :-1:
 
-Find all files modified more than 5 days ago
+找出所有最近一次修改在 5 天之前的文件
 
 ```shell
 $ find my_folder -mtime +5
 ```
 
-## show a calendar
+## 显示日历
 
-**STOP LOOKING UP WHAT THIS MONTH LOOKS LIKE BY CALENDAR WIDGETS** :-1:
+**别用日历小部件来看几月几号是星期几了！** :-1:
 
-Display a text calendar
+显示一个文本风格的日历
 
 ```shell
 $ cal
 ```
 
-Display selected month and year calendar
+显示特定月份和年份的日历
 
 ```shell
 $ cal 11 2018
 ```
 
-## find a future date
+## 计算未来日期
 
-**STOP USING WEBAPPS TO CALCULATE FUTURE DATES** :-1:
+**别用在线日期计算器来干这活了！** :-1:
 
-What is todays date?
+查看今天的日期
 
 ```shell
 $ date +%m/%d/%Y
 ```
 
-What about a week from now?
+查看一周后的日期
 
 ```shell
-$ date -d "+7 days"                                           # on Linux
-$ date -j -v+7d                                               # on MacOS
+$ date -d "+7 days"    # Linux 系统
+$ date -j -v+7d        # MacOS 系统
 ```
 
-## use a calculator
+## 使用计算器
 
-**STOP USING CALCULATOR WIDGET** :-1:
+**真的，抛开那些计算器小部件吧** :-1:
 
 ```shell
 $ bc
 ```
 
-## force quit a program
+## 强制退出应用程序
 
-**STOP CTRL + ALT + DELETE and choose the program to kill** :-1:
+**别用 `CTRL` + `ALT` + `DELETE` 再选要终止的程序那一套了！** :-1:
 
 ```shell
 $ killall program_name
 ```
 
-## check server response
+## 查看服务器响应
 
-**STOP OPENING A BROWSER** :-1:
+**而不用开浏览器！** :-1:
 
 ```shell
 curl -i umair.surge.sh
-# curl's -i (--include) option includes HTTP response headers in its output.
+# curl 指令的 -i (--include) 选项会在让它输出中包含 HTTP 的响应头.
 ```
 
-## view content of a file
+## 查看文件内容
 
-**STOP DOUBLE CLICKING A FILE** :-1:
+**不需要双击** :-1:
 
 ```shell
 $ cat apps/settings.py
-# if the file is too big to fit on one page, you can use a 'pager' (less) which shows you one page at a time.
+# 如果文件太大，一页显示不下的话，你可以使用一个"翻页软件" (less) 来一次查看一页内容
 $ less apps/settings.py
 ```
 
-## search for a text
+## 检索文本内容
 
-**STOP CMD/CTRL + F IN A DIRECTORY** :-1:
+**别用 `CMD`/`CTRL` + `F` 哦** :-1:
 
 ```shell
 $ grep -i "Query" file.txt
@@ -343,56 +343,85 @@ $ grep -i "Query" file.txt
 
 ![grep](./grep.jpg)
 
-## view an image
+说明：`grep`能在文件中检索特定内容，图中是一些常见的配套命令行参数
 
-**STOP USING PREVIEW** :-1:
+- `-i`：大小写敏感
+- `-A`/`-B`/`-C` `<N>`：顺带显示前后文，`-A`表示后面 N 行，`-B`表示前面 N 行，`-C`表示前后各 N 行
+- `-E`：使用正则表达式来匹配
+- `-v`：反选（输出不匹配的行）
+- `-l`：只输出能匹配到内容的**文件名**
+- `-F`：不要将检索内容视为正则表达式
+- `-r`：递归匹配目录下所有文件的内容
+- `-o`：只输出匹配上了的部分（而不是整行）
+- `-a`：也对二进制文件进行检索，而不是忽略它们！
+
+你也可以用别的一些指令来替代`grep`，比如`ack`，`ag`和`ripgrep`（更适合检索代码文本）
+
+## 查看一张图片
+
+**停止你的打开文件预览的行为！** :-1:
 
 ```shell
 $ imgcat image.png
-# Note: requires iTerm2 terminal.
+# 注: 需要 iTerm2 终端程序（仅MacOS）.
 ```
 
-## show disk size
+## 查看磁盘大小
 
-**STOP RIGHT CLICKING DISK ICON OR OPENING DISK UTILITY** :-1:
+**别`右键`点磁盘图标，也别开什么磁盘工具，想都别想！** :-1:
 
 ```shell
 $ df -h
 ```
 
-## check performance of your computer
+## 查看计算机性能
 
-**STOP OPENING YOUR ACTIVITY MONITOR OR TASK MANAGER** :-1:
+**别开你的`活动监视器`和什么`任务管理器`！** :-1:
 
 ```shell
 $ top
 ```
 
-## Quick tips
+## 技巧小贴士
 
 ![CLI tips](./cli_tips.jpg)
 
-## Hotkeys
+给 macOS 用户准备的，但是`bash`命令行环境应该也会有别的
 
-```
-Ctrl + A  Go to the beginning of the line you are currently typing on
-Ctrl + E  Go to the end of the line you are currently typing on
-Ctrl + L  Clears the Screen, similar to the clear command
-Ctrl + U  Clears the line before the cursor position. If you are at the end of the line, clears the entire line.
-Ctrl + H  Same as backspace
-Ctrl + R  Lets you search through previously used commands
-Ctrl + C  Kill whatever you are running
-Ctrl + D  Exit the current shell
-Ctrl + Z  Puts whatever you are running into a suspended background process. fg restores it.
-Ctrl + W  Delete the word before the cursor
-Ctrl + K  Clear the line after the cursor
-Ctrl + T  Swap the last two characters before the cursor
-Esc + T   Swap the last two words before the cursor
-Alt + F   Move cursor forward one word on the current line
-Alt + B   Move cursor backward one word on the current line
-Tab       Auto-complete files and directory names
+```shell
+$ !!                            # 再一次执行上一条指令
+$ sudo !!                       # 以管理员身份执行上一条指令
+$ !<word>                       # 加上特定命令行前缀再执行上一条指令
+$ !<word>:p                     # 显示上一条指令加上前缀，但不要执行
+$ <space>command                # 执行指令，但不要存到历史记录中
+$ echo "ls -l" | at midnight    # 在特定时间执行指令
+$ caffeinate -u -t 3600         # 接下来一小时内阻止你的mac休眠
+$ ls -lhs                       # 将目录中文件按大小排序显示
+$ qlmanage -p <file>            # 从命令行调用"速览"
+$ top -o vsize                  # 查看是什么拖慢了你的mac
 ```
 
-## I can't remember these cryptic commands
+## 热键
 
-You can always google or `man` the commands you are not familiar with. Or, checkout [tldr](https://github.com/tldr-pages/tldr), a collection of simplified and community-driven man pages.
+```
+Ctrl + A  跳转到你当前编辑的命令行行首
+Ctrl + E  跳转到你当前编辑的命令行行尾
+Ctrl + L  清屏，和 clear 指令类似
+Ctrl + U  清除行中光标之前的内容（在行尾时即清除整行）
+Ctrl + H  和退格一样
+Ctrl + R  能让你搜索之前使用过的命令行记录
+Ctrl + C  强制停止当前的程序
+Ctrl + D  退出当前 shell （壳层/命令行界面）
+Ctrl + Z  将当下运行的程序挂起，使用 fg 来恢复运行
+Ctrl + W  删除光标前的一个词
+Ctrl + K  清除行中光标之后的内容
+Ctrl + T  交换光标前两个字符
+Esc + T   交换光标前两个词
+Alt + F   将光标移至行内下一个词处
+Alt + B   将光标移至行内上一个词处
+Tab       自动补全文件/目录的名称
+```
+
+## 我记不住这些神秘指令怎么办呢？
+
+善用谷歌或者 `man` 指令来查看你不熟悉的那些指令。或者你也可以尝试 [`tldr`](https://github.com/tldr-pages/tldr)，这是一个由社区提供支持的简化后的 `man` 帮助页面合集。
