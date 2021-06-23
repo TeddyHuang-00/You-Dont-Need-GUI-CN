@@ -1,21 +1,21 @@
-# You Don't Need GUI
+# 有了CLI，还要什么GUI
 
 [![Join the community on Spectrum](https://withspectrum.github.io/badge/badge.svg)](https://spectrum.chat/you-dont-need/GUI)
 
 <details>
-It's for noobs :)
+给新手用的命令行常用工具介绍 :)
 </details>
 <br />
 
-Graphical user interfaces are super friendly to computer users. They were introduced in reaction to the perceived steep learning curve of command-line interfaces (CLIs).
+图形用户操作界面（Graphical User Interfaces, GUI）对用户很友好，易于上手，没有命令行操作界面（Command-Line Interfaces, CLI）这么陡峭的学习曲线。
 
-![Xerox Star 8010 workstations](./Xerox_Star_8010_workstations.jpg)
+![Xerox Star 8010 工作站](./Xerox_Star_8010_workstations.jpg)
 
-However, they often require more resources, are less powerful and hard to automate via scripting.
+但事实上，他们通常会消耗更多的计算资源，并且在自动化处理方面不如CLI那么容易且强大。
 
-As a computer expert, we want to be more efficient and do our jobs better. We know that command words may not be easily discoverable or mnemonic, so we try to list some common tasks that you might be tempted to do in GUI.
+作为计算机专家，我们希望工作做得又快又好。当然我们也知道各种“黑话”一样的命令行可能不那么容易发现或者记住，所以我们试着在这儿列举一些常见的GUI操作是如何在CLI实现的。
 
-## Quick links
+## 快速跳转
 
 1. [copy a file](#copy-a-file)
 1. [duplicate a file](#duplicate-a-file)
