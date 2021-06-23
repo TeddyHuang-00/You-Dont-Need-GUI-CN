@@ -1,135 +1,136 @@
-# 有了CLI，还要什么GUI
+# 有了 CLI，还要什么 GUI
 
-[![Join the community on Spectrum](https://withspectrum.github.io/badge/badge.svg)](https://spectrum.chat/you-dont-need/GUI)
+[![加入Spectrum社群（英文）](https://withspectrum.github.io/badge/badge.svg)](https://spectrum.chat/you-dont-need/GUI)
 
 <details>
 给新手用的命令行常用工具介绍 :)
 </details>
-<br />
+<br/>
 
 图形用户操作界面（Graphical User Interfaces, GUI）对用户很友好，易于上手，没有命令行操作界面（Command-Line Interfaces, CLI）这么陡峭的学习曲线。
 
 ![Xerox Star 8010 工作站](./Xerox_Star_8010_workstations.jpg)
 
-但事实上，他们通常会消耗更多的计算资源，并且在自动化处理方面不如CLI那么容易且强大。
+但事实上，他们通常会消耗更多的计算资源，并且在自动化处理方面不如 CLI 那么容易且强大。
 
-作为计算机专家，我们希望工作做得又快又好。当然我们也知道各种“黑话”一样的命令行可能不那么容易发现或者记住，所以我们试着在这儿列举一些常见的GUI操作是如何在CLI实现的。
+作为计算机专家，我们希望工作做得又快又好。当然我们也知道各种“黑话”一样的命令行可能不那么容易发现或者记住，所以我们试着在这儿列举一些常见的 GUI 操作是如何在 CLI 实现的。
 
-## 快速跳转
+<h2> 快速跳转 </h2>
 
-1. [copy a file](#copy-a-file)
-1. [duplicate a file](#duplicate-a-file)
-1. [copy a directory](#copy-a-directory)
-1. [duplicate a directory](#duplicate-a-directory)
-1. [move a file](#move-a-file)
-1. [rename a file](#rename-a-file)
-1. [move a directory](#move-a-directory)
-1. [rename a directory](#rename-a-directory)
-1. [merge directories](#merge-directories)
-1. [create a new file](#create-a-new-file)
-1. [create a new directory](#create-a-new-directory)
-1. [show file/directory size](#show-filedirectory-size)
-1. [show file/directory info](#show-filedirectory-info)
-1. [open a file with the default program](#open-a-file-with-the-default-program)
-1. [zip a directory](#zip-a-directory)
-1. [unzip a directory](#unzip-a-directory)
-1. [peek files in a zip file](#peek-files-in-a-zip-file)
-1. [remove a file](#remove-a-file)
-1. [remove a directory](#remove-a-directory)
-1. [list directory contents](#list-directory-contents)
-1. [tree view a directory and its subdirectories](#tree-view-a-directory-and-its-subdirectories)
-1. [find a stale file](#find-a-stale-file)
-1. [show a calendar](#show-a-calendar)
-1. [find a future date](#find-a-future-date)
-1. [use a calculator](#use-a-calculator)
-1. [force quit a program](#force-quit-a-program)
-1. [check server response](#check-server-response)
-1. [view content of a file](#view-content-of-a-file)
-1. [search for a text](#search-for-a-text)
-1. [view an image](#view-an-image)
-1. [show disk size](#show-disk-size)
-1. [check performance of your computer](#check-performance-of-your-computer)
-1. [Quick tips](#quick-tips)
-1. [Hotkeys](#hotkeys)
-1. [I can't remember these cryptic commands](#i-cant-remember-these-cryptic-commands)
+- [拷贝一个文件](#拷贝一个文件)
+- [创建文件副本](#创建文件副本)
+- [拷贝一个目录](#拷贝一个目录)
+- [创建目录副本](#创建目录副本)
+- [移动一个文件](#移动一个文件)
+- [重命名文件](#重命名文件)
+- [移动一个目录](#移动一个目录)
+- [重命名目录](#重命名目录)
+- [merge directories](#merge-directories)
+- [create a new file](#create-a-new-file)
+- [create a new directory](#create-a-new-directory)
+- [show file/directory size](#show-filedirectory-size)
+- [show file/directory info](#show-filedirectory-info)
+- [open a file with the default program](#open-a-file-with-the-default-program)
+- [zip a directory](#zip-a-directory)
+- [unzip a directory](#unzip-a-directory)
+- [peek files in a zip file](#peek-files-in-a-zip-file)
+- [remove a file](#remove-a-file)
+- [remove a directory](#remove-a-directory)
+- [list directory contents](#list-directory-contents)
+- [tree view a directory and its subdirectories](#tree-view-a-directory-and-its-subdirectories)
+- [find a stale file](#find-a-stale-file)
+- [show a calendar](#show-a-calendar)
+- [find a future date](#find-a-future-date)
+- [use a calculator](#use-a-calculator)
+- [force quit a program](#force-quit-a-program)
+- [check server response](#check-server-response)
+- [view content of a file](#view-content-of-a-file)
+- [search for a text](#search-for-a-text)
+- [view an image](#view-an-image)
+- [show disk size](#show-disk-size)
+- [check performance of your computer](#check-performance-of-your-computer)
+- [Quick tips](#quick-tips)
+- [Hotkeys](#hotkeys)
+- [I can't remember these cryptic commands](#i-cant-remember-these-cryptic-commands)
 
+## 拷贝一个文件
 
-## copy a file
+**别再用拖拽或者 `CMD`/`CTRL` + `C`, `CMD`/`CTRL` + `V` 来复制文件了！** :-1:
 
-**STOP DRAG AND DROPPING A FILE, OR CMD/CTRL + C, CMD/CTRL + V A FILE** :-1:
-
-Copy `readme.txt` to the `documents` directory
+将 `readme.txt` 拷贝到 `documents` 目录下
 
 ```shell
 $ cp readme.txt documents/
 ```
 
-## duplicate a file
+## 创建文件副本
 
-**STOP RIGHT CLICKING AND DUPLICATE A FILE** :-1:
+**不要再用`右键`来创建副本了！** :-1:
 
 ```shell
 $ cp readme.txt readme.bak.txt
 ```
-More advanced:
+
+更高级的写法：
+
 ```shell
 $ cp readme{,.bak}.txt
-# Note: learn how the {} works with touch foo{1,2,3}.txt and see what happens.
+# 注: 注意这里的 {} 起什么作用，可以试试 touch foo{1,2,3}.txt 然后看看结果如何
 ```
 
-## copy a directory
+## 拷贝一个目录
 
-**STOP DRAG AND DROPPING A DIRECTORY, OR CMD/CTRL + C, CMD/CTRL + V A DIRECTORY** :-1:
+**也别拖拽目录了，也不要 `CMD`/`CTRL` + `C`, `CMD`/`CTRL` + `V` 来拷贝目录了！** :-1:
 
-Copy `myMusic` directory to the `myMedia` directory
+把 `myMusic` 整个目录拷贝到 `myMedia` 目录下面
 
 ```shell
 $ cp -a myMusic myMedia/
-# or
+# 或者你也可以写成
 $ cp -a myMusic/ myMedia/myMusic/
 ```
 
-## duplicate a directory
+## 创建目录副本
 
-**STOP RIGHT CLICKING AND DUPLICATE A DIRECTORY** :-1:
+**也别用`右键`来创建目录副本了** :-1:
 
 ```shell
 $ cp -a myMusic/ myMedia/
-# or if `myMedia` folder doesn't exist
+# 如果 `myMedia` 文件夹不存在的话
 $ cp -a myMusic myMedia/
 ```
 
-## move a file
+## 移动一个文件
 
-**STOP DRAG AND DROPPING A FILE, OR CMD/CTRL + X, CMD/CTRL + V A FILE** :-1:
+**没有什么拖拽文件，也没有 `CMD`/`CTRL` + `X`, `CMD`/`CTRL` + `V` 来剪切** :-1:
 
 ```shell
 $ mv readme.txt documents/
 ```
 
-**Always** use a trailing slash when moving files, [for this reason](http://unix.stackexchange.com/a/50533).
+**一定** 要在移动文件时在目标目录的最后加上斜杠`/`。（[不然的话](http://unix.stackexchange.com/a/50533)，简言之会被当作[这样](#重命名文件)）
 
-## rename a file
+## 重命名文件
 
-**STOP RIGHT CLICKING AND RENAME A FILE** :-1:
+**别用`右键`-`重命名`了！** :-1:
 
 ```shell
 $ mv readme.txt README.md
 ```
 
-## move a directory
+## 移动一个目录
 
-**STOP DRAG AND DROPPING A DIRECTORY, OR CMD/CTRL + X, CMD/CTRL + V A DIRECTORY** :-1:
+**没有了拖拽文件夹，也没有 `CMD`/`CTRL` + `X`, `CMD`/`CTRL` + `V`** :-1:
 
 ```shell
 $ mv myMedia myMusic/
-# or
+# 或者也可以写成
 $ mv myMedia/ myMusic/myMedia
 ```
 
-## rename a directory
+## 重命名目录
 
-**STOP RIGHT CLICKING AND RENAME A DIRECTORY** :-1:
+**也别`右键`文件夹然后`重命名`了** :-1:
 
 ```shell
 $ mv myMedia/ myMusic/
@@ -273,6 +274,7 @@ Display a text calendar
 ```shell
 $ cal
 ```
+
 Display selected month and year calendar
 
 ```shell
